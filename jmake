@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+JAVAS=$(ls | grep .java)
+
+mkdir c
+
+for FILE in $JAVAS
+do
+    javac -d c $FILE
+    echo "${FILE} compiled"
+done
+
+echo "All compiled!"
