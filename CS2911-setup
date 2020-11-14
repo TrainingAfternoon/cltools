@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+git init
+git remote add origin $1
+git remote -v
+
+echo "Enter y to affirm correct git remote"
+read GOAHEAD
+
+if [ $GOAHEAD -ne "y"]
+then
+    git branch main
+    git checkout main
+    for FILE in "$@"
+    do
+        if [$FILE -ne $1]
+        then
+            git add $FILE
+            git commit -m "init" $FILE
+        fi
+    done
+    git push --set-upstream origin main
+fi
+
+echo "Set up finished!"
