@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#As the name implies, ls output is NOT always safe to parse, and this should probably be replaced at some point
+UNSAFE_ZIS=$(ls | grep Zone.Identifier)
+
+for FILE in $UNSAFE_ZIS
+do
+    rm $FILE
+done
+
+echo "All :Zone.Identifier files removed!"
