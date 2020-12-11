@@ -1,0 +1,5 @@
+#!/env/bin bash
+
+#install xcodedarkhc vim coloration
+cd $HOME/.vim/colors
+curl -sL https://raw.githubusercontent.com/arzg/vim-colors-xcode/master/colors/xcodedarkhc.vim >> xcodedarkhc.vim
