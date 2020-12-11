@@ -22,4 +22,4 @@ set softtabstop=4 "Backspacing after a TAB will remove n spaces /press
 syntax on
 
 """look & feel
-colorscheme murphy
+colorscheme xcodedarkhc
