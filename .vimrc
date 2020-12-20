@@ -17,9 +17,13 @@ set expandtab "Sets tabs to be expanded into tabstop number of spaces
 set shiftwidth=4 "Changes indent to n number of spaces /indent
 set softtabstop=4 "Backspacing after a TAB will remove n spaces /press
 
-
 """Syntax & Plug-ins
 syntax on
 
 """look & feel
 colorscheme xcodedarkhc
+"""Xcodedarkhc tears on scrolling if t_ut is not set to an empty string
+"""sunaku.github.io/vim-256color-bce.html
+if &term =~ '256color'
+    set t_ut=
+endif
