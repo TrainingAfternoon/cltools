@@ -1,4 +1,4 @@
-#!/env/bin bash
+#!/usr/env/bin bash
 
 #install xcodedarkhc vim coloration
 cd $HOME/.vim/colors
