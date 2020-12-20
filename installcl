@@ -1,5 +1,31 @@
 #!/usr/env/bin bash
 
+#GLOBAL VARS
+REPO=https://github.com/TrainingAfternoon/cltools
+
 #install xcodedarkhc vim coloration
 cd $HOME/.vim/colors
 curl -sL https://raw.githubusercontent.com/arzg/vim-colors-xcode/master/colors/xcodedarkhc.vim >> xcodedarkhc.vim
+
+#Make bin directory if necessary; move to bin
+cd $HOME
+if [ ! -d "bin" ]
+then
+    mkdir bin
+fi
+cd $HOME/bin
+
+#FIXME: handle the case where bin existed and was non-empty
+#sol: just git clone like normal and transfer out of the repo?
+if [ ! -d ".git" ]
+then
+    if [ -z $(ls) ]
+    then #If the dir is empty, we can just dump output into . (current dir)
+        git clone $REPO .
+    else
+        #If bin is nonempty, we must be nondestructive so we have to dump 
+        git clone $REPO
+        mv cltools/* .
+        rm -rf cltools
+    fi
+fi
