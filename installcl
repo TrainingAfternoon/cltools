@@ -15,17 +15,21 @@ then
 fi
 cd $HOME/bin
 
-#FIXME: handle the case where bin existed and was non-empty
-#sol: just git clone like normal and transfer out of the repo?
+#Download cltool files
 if [ ! -d ".git" ]
 then
     if [ -z $(ls) ]
     then #If the dir is empty, we can just dump output into . (current dir)
         git clone $REPO .
     else
-        #If bin is nonempty, we must be nondestructive so we have to dump 
+        #If bin is nonempty, we must be nondestructive so we have to dump and pump 
         git clone $REPO
         mv cltools/* .
         rm -rf cltools
     fi
 fi
+
+#make sure bin is in path & executable
+export PATH=$PATH:$HOME/bin
+cd ..
+chmod -R u+x bin
