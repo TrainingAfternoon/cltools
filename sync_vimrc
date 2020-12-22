@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+dd if=$HOME/.vimrc of=.vimrc
+if [ -z $1 ]
+then
+    1="No commit message"
+fi
+git commit -m $1 .vimrc
