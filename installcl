@@ -46,7 +46,7 @@ rm files.txt #Clean up after ourselves
 #Perform set up on Windows Terminal if it exists
 #First, check if running on a windows system by checking if /mnt/c exists
 if [ -d "/mnt/c" ]
-then
+then #Install dependencies for WinTerm mods under Program Files (x86)/cltools
     cd "/mnt/c/Program Files (x86)"
     mkdir cltools
     cd cltools
