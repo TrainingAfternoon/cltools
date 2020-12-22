@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dd if=$HOME/.vimrc of=.vimrc
+dd if=$HOME/.vimrc of=resources/.vimrc
 if [ -z $1 ]
 then
     1="No commit message"
