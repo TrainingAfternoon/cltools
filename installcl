@@ -44,8 +44,16 @@ rm files.txt #Clean up after ourselves
 
 
 #Perform set up on Windows Terminal if it exists
+#First, check if running on a windows system by checking if /mnt/c exists
+if [ -d "/mnt/c" ]
+then
+    cd "/mnt/c/Program Files (x86)"
+    mkdir cltools
+    cd cltools
+    curl -L https://media2.giphy.com/media/Yc65Sk2Hwkzgk/giphy.gif > swing.gif
+fi
 
-
+#TODO: figure out how to scrape windows home directory, which we need to get to WinTerm home 
 
 #make sure bin is in path & executable
 export PATH=$PATH:$HOME/bin
