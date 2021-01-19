@@ -6,6 +6,6 @@ UNSAFE_ZIS=$(ls | grep Zone.Identifier)
 for FILE in $UNSAFE_ZIS
 do
     rm $FILE
+    echo $FILE" removed!"
 done
 
-echo "All :Zone.Identifier files removed!"
