@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ASSET_PATH=/mnt/c/$(whoami)AppData/Roaming/JetBrains/IdeaIC2020.2/dokiThemeAssets/stickers/killaLaKill/ryuko
+
+dd if=${ASSET_PATH}/"guitarist_ryuko - resized.png" of=${ASSET_PATH}/"ryuko.png"
