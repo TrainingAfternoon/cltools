@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#CLI utility for adding a checkstyle-compliant javadoc header to academic programs.
+#Version 1.0.0
+
+FIRST_NAME=$1
+LAST_NAME=$2
+if [ -z $1 ]
+then
+    echo "No name was passed to progheader"
+    exit -1
+fi
+NAME="${1} ${2}"
+
+#TODO: Make course an optional argument
+#TODO: Make quarter smartly determined using date
+#TODO make extensions an optional argument
+COURSE="SE2030 - 011"
+QUARTER="Spring 2021"
+TITLE="G5GTFS Application"
+DATE=$(date +'%m/%d/%y')
+EXTENSIONS="*.java"
+
+HEADER="\/*\n* Course: ${COURSE}\n* ${QUARTER}\n* ${TITLE}\n* Name: ${NAME}\n* Created: ${DATE}\n*\/\n"
+
+sed -i "1s|^|${HEADER}|" $EXTENSIONS
