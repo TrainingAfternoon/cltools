@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+DIR=$(pwd)
+TMP="$HOME/comprog/template.cpp"
+if [ -z "$1" ]
+then
+    NAME="template.cpp"
+else
+    NAME=$1
+fi
+
+dd if=$TMP of="$DIR/$NAME.cpp"
